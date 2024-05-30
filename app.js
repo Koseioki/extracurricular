@@ -6,7 +6,6 @@ window.addEventListener("load", initApp); // When the page is loaded, run initAp
 async function initApp() {
   console.log("initApp: app.js is running 🎉"); // Log to the console that the app is running
   const posts = await getPosts(); // const posts will get the whole fetched data
-  // posts.sort((a,b) => new Date(a.date).getTime() - new Date(b.date).getTime());
   displayPostGrid(posts);
 }
 
@@ -17,10 +16,11 @@ async function getPosts(){
   return data;
 }
 
-
-
+// display posts
 function displayPostGrid(posts){
   const postsGrid = document.querySelector("#posts-grid");
+
+  // loop and go through all the projects
   for (const post of posts) {
     postsGrid.insertAdjacentHTML(
       "beforeend",`
@@ -38,6 +38,7 @@ function displayPostGrid(posts){
   }
 }
 
+// make grid items clickable without makeing it as links
 function handleBoxClick(box) {
   window.location.href = box.getAttribute('data-link');
 }

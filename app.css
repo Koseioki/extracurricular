@@ -39,11 +39,11 @@ h2 {
 .link-text:hover {
   text-decoration: none;
 }
-.link-text:focus{
+
+.link-text:focus {
   outline: 0.2rem #383838 solid;
   outline-offset: 0.25rem;
 }
-
 
 /* div box includes types and texts */
 .types {
@@ -51,12 +51,13 @@ h2 {
   gap: 0.5rem;
   flex-wrap: wrap;
   margin: 1rem 0;
-
 }
+
 h3 {
   margin: 0;
 }
-.types > p {
+
+.types>p {
   margin: 0;
   /* color: pink; */
 }
@@ -65,8 +66,6 @@ h3 {
   font-weight: bold;
   font-size: 1.1rem;
 }
-
-
 
 .grid {
   display: grid;
@@ -90,7 +89,8 @@ h3 {
 .grid-item:hover {
   transform: scale(1.03);
 }
-.grid-item:hover{
+
+.grid-item:hover {
   outline: 0.2rem solid;
 
 }
@@ -106,28 +106,12 @@ h3 {
 }
 
 
-
-
-
-
-/* @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-} */
-
 footer {
-  /* margin-top: 5rem; */
-  /* text-align: center; */
   justify-content: center;
   display: flex;
   align-items: center;
   font-size: 1rem;
-  /* give some space on the bottom */
-  height: 10rem;
+    height: 10rem;
 }
 
 @media only screen and (max-width: 70rem) {
