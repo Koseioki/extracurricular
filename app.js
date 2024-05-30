@@ -17,32 +17,27 @@ async function getPosts(){
   return data;
 }
 
-// function displayPosts(posts){
-//   const postsList = document.querySelector("#post-list");
-//   for (const post of posts){
-//     postsList.insertAdjacentHTML(
-//       "beforeend",`
-// <li>${post.title.rendered}</li>
-// `
-//     );
-//   }
-// }
+
 
 function displayPostGrid(posts){
   const postsGrid = document.querySelector("#posts-grid");
   for (const post of posts) {
     postsGrid.insertAdjacentHTML(
       "beforeend",`
-      <div class="grid-item">
+      <div class="grid-item" data-link="${post.acf.link}" onclick="handleBoxClick(this)">
       <h2>${post.acf.title}</h2>
       <img class="grid-image" src="${post.acf.image.url}" alt="${post.acf.image.alt}">
-      <p><span class="types">🖥️ Type: </span>${post.acf.type}</p>
-      <p><span class="types">👨‍💻 Client: </span>${post.acf.client}</p>
-      <p><span class="types">🕒 Duration: </span>${post.acf.duration}</p>
+      <div class="types"><h3><span aria-hidden="true">🖥️ </span>Type: </h3><p>${post.acf.type}</p></div>
+      <div class="types"><h3><span aria-hidden="true">👨‍💻 </span>Client: </h3><p>${post.acf.client}</p></div>
+      <div class="types"><h3><span aria-hidden="true">🕒 </span>Duration: </h3><p>${post.acf.duration}</p></div>
       <p>${post.acf.description}</p>
 
-      <a href="${post.acf.link}" class="link-text">${post.acf.ctatext} → </a>
+      <a href="${post.acf.link}" class="link-text">${post.acf.ctatext}<span aria-hidden="true"> → </span></a>
       </div>`
     );
   }
+}
+
+function handleBoxClick(box) {
+  window.location.href = box.getAttribute('data-link');
 }
