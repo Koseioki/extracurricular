@@ -33,19 +33,16 @@ function displayPostGrid(posts){
   for (const post of posts) {
     postsGrid.insertAdjacentHTML(
       "beforeend",`
-      <a href="${post.acf.link}" class="grid-item">
-      <img src="${post.acf.image.url}" alt="${post.acf.image.alt}">
+      <div class="grid-item">
       <h2>${post.acf.title}</h2>
-      <p>🖥️ Type: ${post.acf.type}</p>
-      <p>👨‍💻 Client: ${post.acf.client}</p>
-      <p>🕒 Duration: ${post.acf.duration}</p>
+      <img class="grid-image" src="${post.acf.image.url}" alt="${post.acf.image.alt}">
+      <p><span class="types">🖥️ Type: </span>${post.acf.type}</p>
+      <p><span class="types">👨‍💻 Client: </span>${post.acf.client}</p>
+      <p><span class="types">🕒 Duration: </span>${post.acf.duration}</p>
       <p>${post.acf.description}</p>
 
-      <p>${post.acf.link}</p>
-
-
-      <p>→</p>
-      </a>`
+      <a href="${post.acf.link}" class="link-text">${post.acf.ctatext} → </a>
+      </div>`
     );
   }
 }

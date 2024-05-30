@@ -1,60 +1,83 @@
-html,
+/* import font Inter */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 body {
-  margin: 0;
-  padding: 1rem;
-  font-family: Inter, Helvetica, sans-serif;
+  margin: 0 8%;
+  padding: 0;
+  font-family: 'Inter', Helvetica, sans-serif;
   font-size: 1rem;
-  background-color: #f6f6f6;
+  background-color: #ffffff;
   outline: none;
+  color: #383838;
+}
+
+header{
+  height: 6rem;
+  display: flex;
+  align-items: center;
 }
 
 a {
-  color: rgb(5, 23, 29);
+  color: #383838;
   text-decoration: none;
 }
 
-header {
-  background-color: #ffffff;
-  /* box-shadow: 0 2px 5px #000000; */
+h2{
+  margin: 0 0 2rem 0;
 }
 
-h1 {
-  /* color: white; */
-  /* padding: 1em; */
-  /* margin: 0; */
+/* underlined text for "read more"s */
+.link-text{
+  text-decoration: underline;
+  font-weight: bold;
+  float: right;
+  /* position:absolute; */
+  bottom: 0;
+}
+.link-text:hover {
+  text-decoration: none;
+}
+
+/* bold texts for types */
+.types{
+  font-weight: bold;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1em;
-  
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
 }
 
+/* images for each card */
+.grid-image{
+  width: 100%;
+  object-fit: contain; 
+  height: auto;
+  max-height: 20rem;
+  border-radius: 0.5rem;
+}
+
+/* each card itself */
 .grid-item {
-  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25);
-  padding: 1.5em;
-  background-color: #ffffff;
+  /* box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.25); */
+  /* padding: 1.5em; */
+  background-color: #f5f5f5;
   /* transition: 0.3s; */
   /* animation: fadeIn 0.5s; */
-  border-radius: 10px;
-  padding: 2em;
+  border-radius: 0.5rem;
+  padding: 2rem;
 }
 
 /* .grid-item:hover {
   transform: scale(1.03);
 } */
-.grid-item:focus, .grid-item:hover{
-  outline: 0.15rem solid;
+/* .grid-item:focus, .grid-item:hover{
+  outline: 0.2rem solid;
   outline-offset: 0.25rem;
-}
+} */
 
-.grid-item img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-}
+
 
 /* @keyframes fadeIn {
   from {
@@ -64,3 +87,32 @@ h1 {
     opacity: 1;
   }
 } */
+
+footer {
+  text-align: center;
+  font-size: 1rem;
+  /* give some space on the bottom */
+  height: 40vh;
+}
+
+@media only screen and (max-width: 70rem) {
+  body {
+    background-color: lightblue;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media only screen and (max-width: 50rem) {
+  body {
+    background-color: lightpink;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
