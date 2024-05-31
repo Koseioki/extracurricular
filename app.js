@@ -9,7 +9,7 @@ async function initApp() {
   displayPostGrid(posts);
 }
 
-async function getPosts(){
+async function getPosts() {
   // fetch projects
   const response = await fetch("https://headlesswp.koseioki.dk/wp-json/wp/v2/projects?acf_format=standard");
   const data = await response.json();
@@ -17,13 +17,13 @@ async function getPosts(){
 }
 
 // display posts
-function displayPostGrid(posts){
+function displayPostGrid(posts) {
   const postsGrid = document.querySelector("#posts-grid");
 
   // loop and go through all the projects
   for (const post of posts) {
     postsGrid.insertAdjacentHTML(
-      "beforeend",`
+      "beforeend", `
       <div class="grid-item" data-link="${post.acf.link}" onclick="handleBoxClick(this)">
       <h2>${post.acf.title}</h2>
       <img class="grid-image" src="${post.acf.image.url}" alt="${post.acf.image.alt}">
