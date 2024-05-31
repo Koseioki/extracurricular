@@ -42,3 +42,4 @@ function displayPostGrid(posts) {
 function handleBoxClick(box) {
   window.location.href = box.getAttribute('data-link');
 }
+
